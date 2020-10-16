@@ -28,7 +28,7 @@ public class SynProducer {
 	    configs.put(ProducerConfig.LINGER_MS_CONFIG, "2");
 	    configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 	    configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-	
+	    configs.put("min.insync.replicas","1");
 	    KafkaProducer<String,String> producer=new KafkaProducer<String, String>(configs);
 	    BufferedReader reader =null;
 	    String currentLine=null;
