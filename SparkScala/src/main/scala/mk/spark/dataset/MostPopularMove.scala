@@ -13,7 +13,7 @@ object MostPopularMove {
   def loadmoviename(): Map[Int,String]={
    // implicit val codec:Codec=Codec("ISO-8859-1")
     var moviename:Map[Int,String]=Map()  
-    val lines=Source.fromFile("/Volumes/MYHARDDRIVE/MyData/moviename.items")
+    val lines=Source.fromFile("/Volumes/MYHARDDRIVE/scalaspark-gitrepo/dataset/moviename.items")
     for(line<-lines.getLines()){
     
       val fields=line.split('|')
