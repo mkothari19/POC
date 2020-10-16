@@ -26,7 +26,6 @@ object MostPopularMove {
       moviename
   }
   
- 
   
   def main(args: Array[String]): Unit = {
      val spark=SparkSession.builder().appName("Top Rating Movie").master("local[*]")
