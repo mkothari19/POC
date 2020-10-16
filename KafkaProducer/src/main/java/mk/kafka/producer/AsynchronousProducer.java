@@ -54,6 +54,7 @@ public class AsynchronousProducer {
 				
 				producer.flush();
 				
+				
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
