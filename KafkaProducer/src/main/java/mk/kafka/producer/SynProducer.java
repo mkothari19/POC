@@ -39,9 +39,12 @@ public class SynProducer {
 				 reader.close();
 				 ProducerRecord<String, String> record = new ProducerRecord<String,String>(topicName, currentLine);
 				Future<RecordMetadata>future= producer.send(record);
+				producer.flush();
 				
 				try {
-					System.out.println("Topic ="+future.get().topic()+"\n Partition= "+future.get().partition()+"\n Offset= "+future.get().offset()+"\n TimeStamp= "+future.get().timestamp());
+					System.out.println("Topic ="+future.get().topic()+"\n Partition= "+
+				future.get().partition()+"\n Offset= "+future.get().offset()+"\n TimeStamp= "
+							+future.get().timestamp());
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -59,9 +62,6 @@ public class SynProducer {
 		}finally {
 			producer.close();
 		}
-	    
-	    
-	    
 	    
 	}
 
