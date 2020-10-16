@@ -23,11 +23,9 @@ object MinTemprature {
     // FILTER ONLY MIN TEMPRATURE
     val mintemp=records.filter($"measure_type"==="TMIN")
     val stationdf=mintemp.select("stationId", "temprature")
-    stationdf.show()
     val tempbystationid=stationdf.groupBy($"stationId").min("temprature")
     val result=tempbystationid.withColumn("temprature",round($"min(temprature)"*0.1f*(9.0f/5.0f)+32.0f,2))
                 .select("stationId", "temprature").sort("temprature")
-                
     
   result.show
    
