@@ -7,7 +7,7 @@ import org.apache.spark.sql.functions.{col,udf,desc}
 import org.elasticsearch.spark.sql._
 import org.apache.spark.sql.DataFrame
 
-object MostPopularMove {
+object MostPopularMovie {
  case class MovieList(movieid:Int,custid:Int,rating:Int,release_date:String)
  
   def loadmoviename(): Map[Int,String]={
