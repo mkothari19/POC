@@ -10,7 +10,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.spark.streaming.kafka010.CanCommitOffsets
 import org.apache.spark.streaming.kafka010.HasOffsetRanges
 import org.apache.spark.sql.functions.{explode}
-object KafkaIntigration {
+object KafkaIntegration {
   def main(args: Array[String]): Unit = {
  val topics=Array("airbnb")
     val spark=SparkSession.builder().appName("Spark DStream Demo").master("local[*]").getOrCreate()
@@ -53,5 +53,6 @@ object KafkaIntigration {
       
     ssc.start()
     ssc.awaitTermination()
+    spark.close()
   }
 }
