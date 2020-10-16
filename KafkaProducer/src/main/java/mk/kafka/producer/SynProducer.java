@@ -22,13 +22,13 @@ public class SynProducer {
 		String filepath=args[1];
 		File files=new File(filepath);
 		Properties configs=new Properties();
-	    configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"localhost:9091,localhost:9092");
+	    configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,"localhost:9091,localhost:9092,localhost:9093");
 	    configs.put(ProducerConfig.ACKS_CONFIG,"all");
 	    configs.put(ProducerConfig.BATCH_SIZE_CONFIG, "32384");
 	    configs.put(ProducerConfig.LINGER_MS_CONFIG, "2");
 	    configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 	    configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
-	    configs.put("min.insync.replicas","1");
+	    configs.put("min.insync.replicas","2");
 	    KafkaProducer<String,String> producer=new KafkaProducer<String, String>(configs);
 	    BufferedReader reader =null;
 	    String currentLine=null;
