@@ -61,3 +61,7 @@ object MostPopularMove {
    result.toJSON.toDF().saveToEs("movie/popular")
 
    result.show()
+   
+  }
+  
+}
