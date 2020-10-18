@@ -9,19 +9,19 @@ class Bank {
 
 class Axis extends Bank{
   
-   def intresRate():Double={
+ override  def intresRate():Double={
     7.2
   }
    }
 
  class ICICI extends Bank{
-    def intresRate():Double={
+override    def intresRate():Double={
     7.5
   }
  }
  
  class Yes extends Bank{
-    def intresRate():Double={
+  override  def intresRate():Double={
     7.5
   }
  }
