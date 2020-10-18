@@ -25,7 +25,6 @@ override    def intresRate():Double={
     7.5
   }
  }
- 
  object BankDriver{
    def main(args: Array[String]): Unit = {
      println("AXIS= "+ new Axis().intresRate())
