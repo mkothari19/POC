@@ -8,7 +8,7 @@ object LogAnalyzer  extends Context{
 
  val sc=spark.sparkContext
 
- val accessLines=spark.readStream.text("/Volumes/MYHARDDRIVE/scalaspark-gitrepo/dataset")
+ val accessLines=spark.readStream.text("/Volumes/MYHARDDRIVE/scalaspark-gitrepo/dataset/logs")
  
  // Regular expression to extract results from Apache access logs
  
@@ -17,7 +17,6 @@ object LogAnalyzer  extends Context{
  val generalExp="\"(\\S+)\\s(\\S+)\\s+(\\S+)\""
  val timeExp="\\[(\\d{2}/\\*{3}/\\d{4}:\\d{2}:\\d{2}:\\d{2}:\\d{4})]"
  val hostExp="(^\\S+\\.[\\S+\\.]+\\S+)\\s"
- val ipaddessxp="""\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b"""
  
  // Apply above regular expression into unstructured text to make structure
  
@@ -33,7 +32,7 @@ object LogAnalyzer  extends Context{
             
    //Keep running count of status
      
-     val statusCountDf=logDf.groupBy("status").count()
+     val statusCountDf=logDf.groupBy("method").count()
      
    val query=  statusCountDf.writeStream.outputMode("complete").format("console").queryName("counts").start()
       query.awaitTermination()    
