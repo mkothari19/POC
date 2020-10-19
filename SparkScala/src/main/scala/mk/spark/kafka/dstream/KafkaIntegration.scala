@@ -11,11 +11,10 @@ import org.apache.spark.streaming.kafka010.CanCommitOffsets
 import org.apache.spark.streaming.kafka010.HasOffsetRanges
 import org.apache.spark.sql.functions.{explode}
 import org.elasticsearch.spark.sql._
-object KafkaIntegration {
+import mk.spark.utils.Context
+object KafkaIntegration extends Context {
   def main(args: Array[String]): Unit = {
  val topics=Array("airbnb")
-    val spark=SparkSession.builder().appName("Spark DStream Demo").config("spark.es.nodes","localhost")
-    .config("spark.es.port","9200").master("local[*]").getOrCreate()
  val sparkcontext=spark.sparkContext
  val kafkaParam=Map[String,Object](ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG -> "localhost:9092",
   ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG -> classOf[StringDeserializer],

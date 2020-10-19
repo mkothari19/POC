@@ -5,13 +5,13 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.types.{StringType, IntegerType, FloatType}
 import org.apache.spark.sql.functions.{round}
+import mk.spark.utils.Context
 
-object MinTemprature {
+object MinTemprature extends Context {
   case class Temprature(stationId:String,records_date:Int,measure_type:String,temprature:Float)
   
   def main(args: Array[String]): Unit = {
-    val spark=SparkSession.builder().appName("Min Temparture").master("local[*]").getOrCreate()
-    
+     
     val tempratureSchema=new StructType()
     .add("stationId",StringType,nullable=true)
     .add("records_date",IntegerType,nullable=true)

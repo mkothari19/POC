@@ -6,8 +6,9 @@ import org.apache.spark.sql.types.{StructType,IntegerType,StringType}
 import org.apache.spark.sql.functions.{col,udf,desc}
 import org.elasticsearch.spark.sql._
 import org.apache.spark.sql.DataFrame
+import mk.spark.utils.Context
 
-object MostPopularMovie {
+object MostPopularMovie extends Context {
  case class MovieList(movieid:Int,custid:Int,rating:Int,release_date:String)
  
   def loadmoviename(): Map[Int,String]={
@@ -28,12 +29,8 @@ object MostPopularMovie {
   
   
   def main(args: Array[String]): Unit = {
-     val spark=SparkSession.builder().appName("Top Rating Movie").master("local[*]")
-     .config("spark.es.nodes","localhost")
-    .config("spark.es.port","9200")
-    //.config("spark.es.nodes.wan.only","true") //Needed for ES on AWS
-     .getOrCreate()
-    val namedic=spark.sparkContext.broadcast(loadmoviename)
+  
+     val namedic=spark.sparkContext.broadcast(loadmoviename)
     val schema=new StructType()
                 .add("movieid",IntegerType,nullable=true)
                 .add("custid",IntegerType,nullable=true)
