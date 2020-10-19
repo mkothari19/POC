@@ -1,13 +1,12 @@
-package mk.spark.kafka.sstream
+package mk.spark.sstream.file
 import mk.spark.utils.Context
-import org.apache.spark.sql.functions.{regexp_extract,col}
+import org.apache.spark.sql.functions.{regexp_extract, col, current_timestamp, window}
+import org.apache.spark.sql.streaming.OutputMode
 
-object LogAnalyzer  extends Context{
+object LogAnalyzerWithWindow extends Context {
+  def main(args: Array[String]): Unit = {
+   
   
-  def main(args: Array[String]): Unit = {  
-
- val sc=spark.sparkContext
-
  val accessLines=spark.readStream.text("/Volumes/MYHARDDRIVE/scalaspark-gitrepo/dataset/logs")
  
  // Regular expression to extract results from Apache access logs
@@ -18,8 +17,6 @@ object LogAnalyzer  extends Context{
  val timeExp="\\[(\\d{2}/\\*{3}/\\d{4}:\\d{2}:\\d{2}:\\d{2}:\\d{4})]"
  val hostExp="(^\\S+\\.[\\S+\\.]+\\S+)\\s"
  
- // Apply above regular expression into unstructured text to make structure
- 
  val logDf=accessLines.select(regexp_extract(col("value"),hostExp,1).alias("host"),
      regexp_extract(col("value"),timeExp,1).alias("timestamp"),
      regexp_extract(col("value"),generalExp,1).alias("method"),
@@ -27,16 +24,17 @@ object LogAnalyzer  extends Context{
      regexp_extract(col("value"),generalExp,3).alias("protocol"),
      regexp_extract(col("value"),statusExp,1).cast("Integer").alias("status"),
      regexp_extract(col("value"),contanctSizeExp,1).cast("Integer").alias("content_type"))
-      
-            
-            
-   //Keep running count of status
-     
-     val statusCountDf=logDf.groupBy("method").count()
-     
-   val query=  statusCountDf.writeStream.outputMode("complete").format("console").queryName("counts").start()
-      query.awaitTermination()    
-     spark.stop()    
-
+ 
+  val logDf2=  logDf.withColumn("eventtime",current_timestamp())
+       
+  val endpointcount=logDf2.groupBy(window(col("eventtime"),"30 seconds","10 seconds"),col("endpoints")).count
+  
+  val sortedEndpointCount=endpointcount.orderBy(col("count").desc)
+  
+  val query=sortedEndpointCount.writeStream.outputMode(OutputMode.Complete()).format("console").queryName("counts").start()
+   query.awaitTermination()
+   spark.close()
+  
+  
 }
 }
