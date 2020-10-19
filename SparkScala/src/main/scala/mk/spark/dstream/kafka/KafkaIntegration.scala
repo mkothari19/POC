@@ -1,4 +1,4 @@
-package mk.spark.kafka.dstream
+package mk.spark.dstream.kafka
 import org.apache.spark.sql.SparkSession
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.streaming.kafka010.KafkaUtils
