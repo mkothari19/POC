@@ -17,6 +17,7 @@ object LogAnalyzer  extends Context{
  val generalExp="\"(\\S+)\\s(\\S+)\\s+(\\S+)\""
  val timeExp="\\[(\\d{2}/\\*{3}/\\d{4}:\\d{2}:\\d{2}:\\d{2}:\\d{4})]"
  val hostExp="(^\\S+\\.[\\S+\\.]+\\S+)\\s"
+ val ipaddessxp="""\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b"""
  
  // Apply above regular expression into unstructured text to make structure
  
@@ -27,6 +28,7 @@ object LogAnalyzer  extends Context{
      regexp_extract(col("value"),generalExp,3).alias("protocol"),
      regexp_extract(col("value"),statusExp,1).cast("Integer").alias("status"),
      regexp_extract(col("value"),contanctSizeExp,1).cast("Integer").alias("content_type"))
+      
             
             
    //Keep running count of status
