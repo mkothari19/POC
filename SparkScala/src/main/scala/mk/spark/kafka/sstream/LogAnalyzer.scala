@@ -5,7 +5,7 @@ import org.apache.spark.sql.functions.{regexp_extract,col}
 object LogAnalyzer  extends Context{
  val sc=spark.sparkContext
 
- val accessLines=spark.readStream.text("/var/log/apache/access.log")
+ val accessLines=spark.readStream.text("/Volumes/MYHARDDRIVE/scalaspark-gitrepo/dataset/access_logs.log")
  
  // Regular expression to extract results from Apache access logs
  
