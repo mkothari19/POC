@@ -1,0 +1,36 @@
+#!/bin/bash
+
+JAVA_BIN=/usr/bin/java
+BDU_API_CLIENT=/usr/local/bin/BDUAPIClient.jar
+BDU_PRODUCER_MODE="-m stream-publish"
+
+if [[ $# -lt 5 ]]; then
+	echo "usage: $0 <filename|directory> <server> <topic> <message brokers> <error directory>"
+	exit 1
+fi
+
+if [[ ! -e $1 ]]; then
+	echo "File or Directory does not exist.."
+	exit 1
+fi
+
+if [[ ! -d $1 ]]; then
+	file_path="$(dirname $1)"
+	file_name="$(basename $1)"
+else
+	file_path=$1
+fi
+
+if [[ -d $1 && -z "$(ls -A $1)" ]]; then
+	echo "no files in directory skipping.."
+	exit 1
+else
+    brokers="-Dproducer.brokers=$4"
+    error_dir="-Derror.landing.dir=file://$5"
+	inputs="-Dconsume.dir=file://$file_path?noop=true"
+	if [[ ! -z $file_name ]]; then
+		inputs="$inputs&fileName=$file_name"
+	fi
+	producer="-Dkafka.producer.config=kafka:$2?topic=%2Fstreams%2Fsmcstream%3A$3"
+	exec $JAVA_BIN $brokers $error_dir $inputs $producer -jar $BDU_API_CLIENT $BDU_PRODUCER_MODE
+fi
