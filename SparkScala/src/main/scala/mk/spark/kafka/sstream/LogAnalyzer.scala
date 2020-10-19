@@ -3,9 +3,12 @@ import mk.spark.utils.Context
 import org.apache.spark.sql.functions.{regexp_extract,col}
 
 object LogAnalyzer  extends Context{
+  
+  def main(args: Array[String]): Unit = {  
+
  val sc=spark.sparkContext
 
- val accessLines=spark.readStream.text("/Volumes/MYHARDDRIVE/scalaspark-gitrepo/dataset/access_logs.log")
+ val accessLines=spark.readStream.text("/Volumes/MYHARDDRIVE/scalaspark-gitrepo/dataset")
  
  // Regular expression to extract results from Apache access logs
  
@@ -30,8 +33,9 @@ object LogAnalyzer  extends Context{
      
      val statusCountDf=logDf.groupBy("status").count()
      
-   val query=  statusCountDf.writeStream.outputMode("compleat").format("console").queryName("counts").start()
+   val query=  statusCountDf.writeStream.outputMode("complete").format("console").queryName("counts").start()
       query.awaitTermination()    
      spark.stop()    
 
+}
 }
