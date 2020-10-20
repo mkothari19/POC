@@ -22,7 +22,7 @@ case class Teacher(name:String,subject:String) extends Person
 object CaseClassDemo {
   def main(args: Array[String]): Unit = {
     /** Apply**/
-    val s=Student("Maneesh",30)
+    val s=Student("Manish",30)
     println("name::"+s.name +" age:: "+s.age)
     /**Unapply **/
     
@@ -31,7 +31,11 @@ object CaseClassDemo {
     
   println( getPrintableString(s1))
   println(getPrintableString(t))
-    
+  /*
+   * Copy method: Cloning
+   */
+  val s2=s1.copy(age=50)
+  println("COPY  "+s2)
   }
   
   def getPrintableString(p: Person): String = p match {
