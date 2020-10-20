@@ -17,6 +17,7 @@ public class ForeachOrdered {
         //Iterate using method reference
         System.out.println("------------Iterating by passing method reference---------------");  
         gamesList.stream().forEachOrdered(System.out::println);
+        
 	}
 
 }
