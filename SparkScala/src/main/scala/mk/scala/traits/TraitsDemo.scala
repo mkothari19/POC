@@ -1,7 +1,9 @@
 package mk.scala.traits
 
 trait TraitsDemo {
+  //Abstract method
   def printMessage
+  //Implemented method
   def printMessage(message:String)={
     println(message)
   }
@@ -31,6 +33,7 @@ class MyClass extends TraitsDemo{
 object MainClass {
   def main(args: Array[String]): Unit = {
     val obj=new MyClass()
+    obj.printMessage("Traits demo ")
     obj.printMessage()
   }
 }
