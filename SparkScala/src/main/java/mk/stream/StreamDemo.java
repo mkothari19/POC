@@ -7,80 +7,82 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StreamDemo {
-public static void main(String[] args) {
-	
-List<Product> productList=new ArrayList<Product>();	
+	public static void main(String[] args) {
 
-productList.add(new Product(50000f,"Ipphone 11",1));
-productList.add(new Product(120000f,"MacPro",1));
-productList.add(new Product(80000f,"MacAir",1));
-productList.add(new Product(150000f,"Ipphone 12",1));
-productList.add(new Product(450000f,"Apple Watch",1));
+		List<Product> productList = new ArrayList<Product>();
 
-List<String> result =productList.stream().filter(p->p.getPrice()>60000).map(p->p.getProductName()).collect(Collectors.toList());
+		productList.add(new Product(50000f, "Ipphone 11", 1));
+		productList.add(new Product(120000f, "MacPro", 1));
+		productList.add(new Product(80000f, "MacAir", 1));
+		productList.add(new Product(150000f, "Ipphone 12", 1));
+		productList.add(new Product(450000f, "Apple Watch", 1));
 
-System.out.println(result);
+		List<String> result = productList.stream().filter(p -> p.getPrice() > 60000).map(p -> p.getProductName())
+				.collect(Collectors.toList());
 
-/*
- * Iterating Stream
- */
+		System.out.println(result);
 
-productList.stream().filter(p->p.getPrice()==50000).forEach(p->System.out.println(p.getProductName()));
+		/*
+		 * Iterating Stream
+		 */
 
-/*
- * Reduce 
- */
-Float totalPrice=productList.stream().map(p->p.getPrice()).reduce(0.0f,Float::sum);
-System.out.println(totalPrice);
+		productList.stream().filter(p -> p.getPrice() == 50000).forEach(p -> System.out.println(p.getProductName()));
 
-/*
- *  Using Collectors's method to sum the prices.
- */
+		/*
+		 * Reduce
+		 */
+		Float totalPrice = productList.stream().map(p -> p.getPrice()).reduce(0.0f, Float::sum);
+		System.out.println(totalPrice);
 
-Double total=productList.stream().collect(Collectors.summingDouble(p->p.getPrice()));
- System.out.println(total);
+		/*
+		 * Using Collectors's method to sum the prices.
+		 */
 
-/*
- * Max Product Price
- */
- 
-Product productA= productList.stream().max((p1,p2)->p1.getPrice()>p2.getPrice()?1:-1).get();
-System.out.println("MAX: "+productA.getPrice());
+		Double total = productList.stream().collect(Collectors.summingDouble(p -> p.getPrice()));
+		System.out.println(total);
 
-/*
- * Min Product Price
- */
-Product productB=productList.stream().max((p1,p2)->p1.getPrice() < p2.getPrice()?1:1).get();
-System.out.println("MIN :"+productB.getPrice());
+		/*
+		 * Max Product Price
+		 */
 
-/*
- * Count
- * 
- */
-long count=productList.stream().filter(p->p.getPrice()>30000).count();
+		Product productA = productList.stream().max((p1, p2) -> p1.getPrice() > p2.getPrice() ? 1 : -1).get();
+		System.out.println("MAX: " + productA.getPrice());
 
-System.out.println(count);
-/*
- * Covert list to set
- */
+		/*
+		 * Min Product Price
+		 */
+		Product productB = productList.stream().max((p1, p2) -> p1.getPrice() < p2.getPrice() ? 1 : 1).get();
+		System.out.println("MIN :" + productB.getPrice());
 
-Set<Float> set= productList.stream().filter(p->p.getPrice()>30000).map(p->p.getPrice()).collect(Collectors.toSet());
+		/*
+		 * Count
+		 * 
+		 */
+		long count = productList.stream().filter(p -> p.getPrice() > 30000).count();
 
-System.out.println(set);
+		System.out.println(count);
+		/*
+		 * Covert list to set
+		 */
 
-Map<String,Float> map= productList.stream().filter(p->p.getPrice()>30000).collect(Collectors.toMap(p->p.getProductName(),p->p.getPrice()));
+		Set<Float> set = productList.stream().filter(p -> p.getPrice() > 30000).map(p -> p.getPrice())
+				.collect(Collectors.toSet());
 
-System.out.println(map);
+		System.out.println(set);
 
-/*
- * Method reference in Stream
- */
+		Map<String, Float> map = productList.stream().filter(p -> p.getPrice() > 30000)
+				.collect(Collectors.toMap(p -> p.getProductName(), p -> p.getPrice()));
 
-List<Float> priceList= productList.stream().filter(p->p.getPrice()>30000).map(Product::getPrice).collect(Collectors.toList());
-   System.out.println(priceList);
+		System.out.println(map);
 
-}
+		/*
+		 * Method reference in Stream
+		 */
 
+		List<Float> priceList = productList.stream().filter(p -> p.getPrice() > 30000).map(Product::getPrice)
+				.collect(Collectors.toList());
+		System.out.println(priceList);
 
+	}
 
 }
