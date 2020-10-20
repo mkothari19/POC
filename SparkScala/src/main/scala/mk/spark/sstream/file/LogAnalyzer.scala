@@ -29,7 +29,6 @@ object LogAnalyzer  extends Context{
      regexp_extract(col("value"),contanctSizeExp,1).cast("Integer").alias("content_type"))
       
             
-            
    //Keep running count of status
      
      val statusCountDf=logDf.groupBy("method").count()

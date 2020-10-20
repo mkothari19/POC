@@ -20,6 +20,8 @@ object MinTemprature extends Context {
     import spark.implicits._
     val records=spark.read.schema(tempratureSchema)/*or  schema(Encoders.product[Temprature].schema)*/
                 .csv("/Volumes/MYHARDDRIVE/scalaspark-gitrepo/dataset/1800.csv").as[Temprature]
+    
+   //println("SIZE "+records.rdd.partitions.size)
     // FILTER ONLY MIN TEMPRATURE
     val mintemp=records.filter($"measure_type"==="TMIN")
     val stationdf=mintemp.select("stationId", "temprature")
