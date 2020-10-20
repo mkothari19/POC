@@ -11,6 +11,9 @@ class Student(var name:String,var age:Int) {
 
 object Student{
  // De-construct object instance 
+  /*As shown, unapply de-constructs the Person instance it’s given. 
+  In Scala, when you put an unapply method in a companion object, it’s said that you’ve created an extractor method,
+  because you’ve created a way to extract the fields out of the object.*/
   def unapply(s:Student):String=s"${s.name},${s.age}"
-  
+    
 }
