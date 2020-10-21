@@ -1,8 +1,8 @@
 package mk.scala.classes
 
-/* 
- * This will not work so abstract class concent is Scala
- * trait Employee(name:String){
+/* trait does not allowed constructor param so abstract class come into picture
+ *
+ * trait Employee(name:String){} will not work
   
 }*/
 abstract class Employee(name:String) {
