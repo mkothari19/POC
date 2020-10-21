@@ -12,6 +12,7 @@ object MainClass{
    println( new Socket())
    println(new Socket(1000))
   println(new Socket(1000,2000))
+  println(new Socket(timeout=5000,linger=6000))
     
   }
 }
