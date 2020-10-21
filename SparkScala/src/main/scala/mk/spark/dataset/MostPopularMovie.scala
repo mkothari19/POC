@@ -7,7 +7,6 @@ import org.apache.spark.sql.functions.{col,udf,desc}
 import org.elasticsearch.spark.sql._
 import org.apache.spark.sql.DataFrame
 import mk.spark.utils.Context
-
 object MostPopularMovie extends Context {
  case class MovieList(movieid:Int,custid:Int,rating:Int,release_date:String)
  
