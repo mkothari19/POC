@@ -9,7 +9,7 @@ object ExpressionMatching {
   }
   
   def say(word:Any):String=word match{
-    case true=> "Your are sating true"
+    case true=> "Your are saying true"
     case false=>"Your are saying false"
     case _=>"Your are saying Nothing"  
   }
