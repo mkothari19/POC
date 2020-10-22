@@ -1,16 +1,16 @@
 package mk.thread.deadlock;
 
-public class Thread1 implements  Runnable {
+public class Thread1 implements Runnable {
 
 	Shared s1;
 	Shared s2;
 	Thread t1;
-	
-	Thread1(Shared s1,Shared s2){
-		this.s1=s1;
-		this.s2=s2;
+
+	Thread1(Shared s1, Shared s2) {
+		this.s1 = s1;
+		this.s2 = s2;
 	}
-	
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -18,8 +18,8 @@ public class Thread1 implements  Runnable {
 	}
 
 	public void startT1() {
-		if(t1==null) {
-			t1= new Thread(this,"t1 thread");
+		if (t1 == null) {
+			t1 = new Thread(this, "t1 thread");
 			t1.start();
 		}
 	}
