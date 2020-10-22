@@ -28,7 +28,7 @@ public class RunnablePractical implements Runnable {
 			if (record % 2 == 0)
 				output.add(record);
 			try {
-				Thread.sleep(50);
+				Thread.sleep(5);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -61,6 +61,7 @@ public class RunnablePractical implements Runnable {
 		}
 		System.out.println(records);
 		RunnablePractical t1 = new RunnablePractical("thread1 ", records.subList(1, (records.size() / 2)));
+		
 		t1.threadstarting();
 		RunnablePractical t2 = new RunnablePractical("thread2 ",
 				records.subList((records.size() / 2) + 1, records.size()));
