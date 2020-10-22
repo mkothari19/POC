@@ -19,6 +19,7 @@ public class Thread1 implements  Runnable {
 
 	public void startT1() {
 		if(t1==null) {
+			t1= new Thread(this,"t1 thread");
 			t1.start();
 		}
 	}

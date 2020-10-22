@@ -20,6 +20,7 @@ public class Thread2 implements Runnable {
 
 	public void startT2() {
 		if(t2==null) {
+			t2=new Thread(this,"t2 thread");
 			t2.start();
 		}
 	}
