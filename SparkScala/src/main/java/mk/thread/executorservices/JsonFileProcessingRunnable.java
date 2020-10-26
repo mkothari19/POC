@@ -48,7 +48,7 @@ public class JsonFileProcessingRunnable  implements Runnable{
 		   try {
 			JSONObject json = (JSONObject) parser.parse(line);
 			   String pnr_id= (String) json.get("PNR_ID");
-			   String segments=(String) json.get("Segments");
+			   String segments= (String) json.get("Segments").toString();
 			   map.put(pnr_id, segments);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

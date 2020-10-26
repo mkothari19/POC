@@ -29,6 +29,8 @@ JsonFileProcessingCallable(String filename){
 	@Override
 	public Map<String, String> call() throws Exception {
 		// TODO Auto-generated method stub
+		
+		System.out.println(Thread.currentThread().getName());
 	Map<String,String> pnrmap=new HashMap<String,String>();
 	Stream<String> stream=	Files.lines(Paths.get(this.filename),Charset.forName("ISO-8859-1"));
      stream.forEach(line->{
@@ -36,7 +38,7 @@ JsonFileProcessingCallable(String filename){
     	 try {
 			JSONObject obj= (JSONObject) parse.parse(line);
 			String pnr_id=(String) obj.get("PNR_ID");
-			String segments=(String) obj.get("Segments");
+			  String segments= (String) obj.get("Segments").toString();
 			pnrmap.put(pnr_id,segments);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -47,7 +49,7 @@ JsonFileProcessingCallable(String filename){
 		return pnrmap;
 	}
 public static void main(String[] args) throws InterruptedException, ExecutionException {
-	ExecutorService executor=Executors.newFixedThreadPool(5);
+	ExecutorService executor=Executors.newFixedThreadPool(15);
 	List<Future<Map<String,String>>> result = new ArrayList<>();
 	Map<String,String> finalResult = new HashMap<>();
 	File folder = new File("/Volumes/MYHARDDRIVE/BDUPROJECT" + "/json");
@@ -67,9 +69,10 @@ public static void main(String[] args) throws InterruptedException, ExecutionExc
 			
 		});
 	
-		System.out.println(finalResult);
-	}
 	
+	}
+	System.out.println(finalResult);
+	executor.shutdown();
 }
 	
 }
