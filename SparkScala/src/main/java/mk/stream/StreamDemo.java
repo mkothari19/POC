@@ -16,6 +16,8 @@ public class StreamDemo {
 		productList.add(new Product(80000f, "MacAir", 1));
 		productList.add(new Product(150000f, "Ipphone 12", 1));
 		productList.add(new Product(450000f, "Apple Watch", 1));
+		
+		System.out.println("LIST    "+productList.get(0));
 
 		List<String> result = productList.stream().filter(p -> p.getPrice() > 60000).map(p -> p.getProductName())
 				.collect(Collectors.toList());
