@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="6" failures="0" name="com.hcl.demo.HclDemoTest" time="0.128" errors="2" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.77-b03"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Volumes/MYHARDDRIVE/Java8WorkSpace/Scala_Test"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Volumes/MYHARDDRIVE/Java8WorkSpace/Scala_Test"/>
+    <property name="java.runtime.version" value="1.8.0_77-b03"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/b7/k0qcrmmn58l5l394q3fqq47m0000gq/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Volumes/MYHARDDRIVE/Java8WorkSpace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf2775289994603460246.tmp"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/maneeshkothari/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.14.2"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/maneeshkothari"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="maneeshkothari"/>
+    <property name="java.class.path" value="/Volumes/MYHARDDRIVE/scalaid/eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.8.1.20170728-1531/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_77"/>
+    <property name="java.ext.dirs" value="/Users/maneeshkothari/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_77.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Volumes/MYHARDDRIVE/Java8WorkSpace/Scala_Test/EMBEDDED"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="com.hcl.demo.HclDemoTest" name="Print 1 to 10 with comma seperator" time="0.081"/>
+  <testcase classname="com.hcl.demo.HclDemoTest" name="Print 1 to 10 with space seperator" time="0.002"/>
+  <testcase classname="com.hcl.demo.HclDemoTest" name="Not excepted result" time="0.002"/>
+  <testcase classname="com.hcl.demo.HclDemoTest" name="Calculate AOT should give 50 when base is 10 and hight is 10" time="0.043">
+    <error message="Success(50.0) did not equal 50" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Success(50.0) did not equal 50
+	at org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:528)
+	at org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:527)
+	at org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:501)
+	at com.hcl.demo.HclDemoTest.$anonfun$new$4(HclDemoTest.scala:31)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at org.scalatest.FunSuite.withFixture(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:289)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at com.hcl.demo.HclDemoTest.org$scalatest$BeforeAndAfter$$super$runTest(HclDemoTest.scala:10)
+	at org.scalatest.BeforeAndAfter.runTest(BeforeAndAfter.scala:203)
+	at org.scalatest.BeforeAndAfter.runTest$(BeforeAndAfter.scala:192)
+	at com.hcl.demo.HclDemoTest.runTest(HclDemoTest.scala:10)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:396)
+	at scala.collection.immutable.List.foreach(List.scala:378)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:384)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:379)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:461)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1147)
+	at org.scalatest.Suite.run$(Suite.scala:1129)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:521)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at com.hcl.demo.HclDemoTest.org$scalatest$BeforeAndAfter$$super$run(HclDemoTest.scala:10)
+	at org.scalatest.BeforeAndAfter.run(BeforeAndAfter.scala:258)
+	at org.scalatest.BeforeAndAfter.run$(BeforeAndAfter.scala:256)
+	at com.hcl.demo.HclDemoTest.run(HclDemoTest.scala:10)
+	at org.scalatest.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+  <testcase classname="com.hcl.demo.HclDemoTest" name="Calculate AOT should not  give 50 when base is 5 and hight is 10" time="0"/>
+  <testcase classname="com.hcl.demo.HclDemoTest" name="Are of trangle is zero when base is 0" time="0">
+    <error message="Success(0.0) did not equal 0" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Success(0.0) did not equal 0
+	at org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:528)
+	at org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:527)
+	at org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:501)
+	at com.hcl.demo.HclDemoTest.$anonfun$new$6(HclDemoTest.scala:43)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at org.scalatest.FunSuite.withFixture(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:289)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at com.hcl.demo.HclDemoTest.org$scalatest$BeforeAndAfter$$super$runTest(HclDemoTest.scala:10)
+	at org.scalatest.BeforeAndAfter.runTest(BeforeAndAfter.scala:203)
+	at org.scalatest.BeforeAndAfter.runTest$(BeforeAndAfter.scala:192)
+	at com.hcl.demo.HclDemoTest.runTest(HclDemoTest.scala:10)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:396)
+	at scala.collection.immutable.List.foreach(List.scala:378)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:384)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:379)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:461)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1147)
+	at org.scalatest.Suite.run$(Suite.scala:1129)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:521)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at com.hcl.demo.HclDemoTest.org$scalatest$BeforeAndAfter$$super$run(HclDemoTest.scala:10)
+	at org.scalatest.BeforeAndAfter.run(BeforeAndAfter.scala:258)
+	at org.scalatest.BeforeAndAfter.run$(BeforeAndAfter.scala:256)
+	at com.hcl.demo.HclDemoTest.run(HclDemoTest.scala:10)
+	at org.scalatest.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+  </testcase>
+</testsuite>
