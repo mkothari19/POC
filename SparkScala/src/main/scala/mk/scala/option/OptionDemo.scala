@@ -1,6 +1,6 @@
 package mk.scala.option
 
-import spire.math.Algebraic.Expr
+
 
 object OptionDemo extends App {
   
